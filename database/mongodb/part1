@@ -1,0 +1,85 @@
+use mydb
+
+Assuming all the products data is in products collection in mydb
+===============================================================
+Find all the information about each products
+============================================
+mydb.products.find({})
+
+Find the product price which are between 400 to 800
+===================================================
+mydb.products.find({
+  product_price: {
+    $gte: 400,
+    $lte: 800
+  }
+})
+
+Find the product price which are not between 400 to 600
+=======================================================
+mydb.products.find({
+  product_price: {
+    $not: {
+      $gt: 400,
+      $lt: 600
+    }
+  }
+})
+
+List the four product which are grater than 500 in price 
+=========================================================
+mydb.products.find({
+  product_price: {
+    $gt: 500,
+  }
+}).limit(4)
+
+Find the product name and product material of each products
+===========================================================
+mydb.products.find({},
+{
+  product_name: 1,
+  product_material: 1
+})
+
+Find the product with a row id of 10
+====================================
+mydb.products.find({
+  id: "10"
+})
+
+Find only the product name and product material
+===============================================
+mydb.products.find({},
+{
+  product_name: 1,
+  product_material: 1
+})
+
+Find all products which contain the value of soft in product material 
+=====================================================================
+mydb.products.find({
+  product_material: "Soft"
+})
+
+Find products which contain product color indigo  and product price 492.00
+==========================================================================
+mydb.products.find({
+  product_color: "indigo",
+  product_price: 492
+})
+
+Delete the products which product price value are same
+======================================================
+db.products.find({}, {
+  product_price: 1
+}).sort({
+  _id: 1
+}).forEach(function (record) {
+  db.products.remove({
+    _id: {
+      $gt: record._id
+    },
+    product_price: record.product_price
+  });
+});
