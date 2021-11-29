@@ -1,0 +1,74 @@
+create database guvi;
+
+use guvi;
+
+create table users(
+user_id integer PRIMARY KEY,
+name text,
+gender varchar(6),
+mobile integer,
+highest_education text,
+FOREIGN KEY (mentor_id) REFERENCES mentors(id)
+);
+
+create table codekata(
+id integer PRIMARY KEY,
+questions_solved integer,
+questions_available integer,
+FOREIGN KEY (topic_id) REFERENCES topics(id),
+FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
+
+create table attendance(
+id integer PRIMARY KEY,
+classes_conducted integer,
+classes_attended integer,
+FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
+
+create table topics(
+id integer PRIMARY KEY,
+name text,
+question_solved boolean,
+FOREIGN KEY (question_id) REFERENCES questions(id)
+);
+
+create table tasks(
+id integer PRIMARY KEY,
+name text,
+solved boolean,
+FOREIGN KEY (users_id) REFERENCES users(users_id),
+FOREIGN KEY (question_id) REFERENCES questions(id)
+);
+
+create table questions(
+id integer PRIMARY KEY,
+question text,
+answers text
+);
+
+create table company_drives(
+id integer PRIMARY KEY,
+company_name text,
+interview_date date,
+attended boolean,
+FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
+
+create table mentors{
+mentor_id integer PRIMARY KEY,
+name text,
+data_of_joining date
+};
+
+create table students_activated_courses(
+id integer PRIMARY KEY,
+activated boolean,
+FOREIGN KEY (user_id) REFERENCES users(user_id),
+FOREIGN KEY (course_id) REFERENCES courses(id)
+);
+
+create table courses(
+id integer PRIMARY KEY,
+course_name text
+);

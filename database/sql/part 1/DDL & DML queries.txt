@@ -1,0 +1,115 @@
+
+2. insert at least 5 rows of values in each table
+
+
+Inserting into users table
+============================
+insert into users values(1,"Ashwin","male","ashwin@gmail.com","BE",1);
+insert into users values(2,"Rohit","male","rohit@gmail.com","BSc",2);
+insert into users values(3,"Kohli","male","kohli@gmail.com","BCom",2);
+insert into users values(4,"Dhoni","male","dhoni@gmail.com","BA",4);
+insert into users values(5,"Jadeja","male","jadeja@gmail.com","BBA",5);
+
+Inserting into codekata table
+============================
+insert into codekata values(1,50,100,20,1);
+insert into codekata values(1,10,10,2,1);
+insert into codekata values(1,20,50,10,2);
+insert into codekata values(1,5,10,3,3);
+insert into codekata values(1,25,30,1,4);
+
+Inserting into attendance table
+============================
+insert into attendance values(1,50,60,1);
+insert into attendance values(2,40,60,5);
+insert into attendance values(3,55,60,2);
+insert into attendance values(4,45,60,3);
+insert into attendance values(5,25,60,4);
+
+Inserting into topics table
+============================
+insert into topics values(1,"Arrays",true,1);
+insert into topics values(3,"Basics",true,2);
+insert into topics values(4,"DS",false,3);
+insert into topics values(5,"Algorithms",true,4);
+insert into topics values(2,"Strings",false,5);
+
+Inserting into tasks table
+============================
+insert into tasks values(1,"HTML",true,1,1);
+insert into tasks values(2,"CSS",false,2,5);
+insert into tasks values(3,"JS",true,2,2);
+insert into tasks values(4,"REACT",false,2,3);
+insert into tasks values(5,"REACT-ROUTER",3,4);
+
+Inserting into questions table
+============================
+insert into questions values(1,"what is array?","array is a collection of elements");
+insert into questions values(2,"what is HTML?","HyperText Markup Language");
+insert into questions values(3,"What is css?","cascading style sheet");
+insert into questions values(4,"what is js?","Javascript");
+insert into questions values(5,"when is noscript tag used?","When js is disabled in browser we see it");
+
+Inserting into company_drives table
+============================
+insert into company_drives values(1,"ola",'2020-11-11',true,1);
+insert into company_drives values(2,"uber",'2020-10-11',false,5);
+insert into company_drives values(3,"zomato",'2020-12-11',true,2);
+insert into company_drives values(4,"swiggy",'2020-09-11',false,3);
+insert into company_drives values(5,"qualcomm",'2021-11-11',true,4);
+
+Inserting into mentors table
+============================
+insert into mentors values(1,"suman",'2020-11-11');
+insert into mentors values(2,"jai",'2020-10-11');
+insert into mentors values(3,"veer",'2020-12-11');
+insert into mentors values(4,"bala",'2020-09-11');
+insert into mentors values(5,"raghav",'2021-11-11');
+
+Inserting into students_activated_courses table
+============================
+insert into students_activated_courses values(1,true,1,2);
+insert into students_activated_courses values(2,false,1,3);
+insert into students_activated_courses values(3,true,1,4);
+insert into students_activated_courses values(4,true,2,4);
+insert into students_activated_courses values(5,true,2,5);
+
+Inserting into courses table
+============================
+insert into courses values(1,"java");
+insert into courses values(2,"python");
+insert into courses values(3,"javascript");
+insert into courses values(4,"c++");
+insert into courses values(5,"ML");
+
+3. get number problems solved in codekata by combining the users
+
+select u.name,c.questions_solved from users u
+left join codekata c
+on u.user_id=c.user_id;
+
+4. display the no of company drives attended by a user
+
+select u.name,count(*) as Number_of_Drives_attended 
+from company_drives c
+ left join users u
+ on u.user_id=c.user_id
+ where c.attended=true
+ group by user_id;
+ 
+5. combine and display students_activated_courses and courses for a specific user groping them based on the course
+
+select * from students_activated_courses s join courses c
+on s.course_id=c.id
+group by course_name;
+
+6. list all the mentors
+
+select * from mentors;
+
+7. list the number of students that are assigned for a mentor
+
+select m.name,count(*) as students_assigned from users u
+left join mentors m
+on m.mentor_id=u.mentor_id
+group by mentor_id;
