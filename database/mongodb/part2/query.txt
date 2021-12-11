@@ -1,3 +1,209 @@
+Design database for Zen class programme
+users
+codekata
+attendance
+topics
+tasks
+company_drives
+mentors
+
+Find all the topics and tasks which are thought in the month of October
+db.collection.aggregate([
+  {
+    "$project": {
+      class: {
+        $filter: {
+          "input": "$class",
+          "as": "class",
+          "cond": {
+            $and: [
+              {
+                $gte: [
+                  "$$class.startTime",
+                  new Date("2020-10-01T00:00:00.000Z")
+                ]
+              },
+              {
+                $lte: [
+                  "$$class.startTime",
+                  new Date("2020-10-31T00:00:00.000Z")
+                ]
+              }
+            ]
+          }
+        }
+      },
+      codekata: {
+        $filter: {
+          "input": "$codekata.topics",
+          "as": "topics",
+          "cond": {
+            $and: [
+              {
+                $gte: [
+                  "$$topics.startTime",
+                  new Date("2020-10-01T00:00:00.000Z")
+                ]
+              },
+              {
+                $lte: [
+                  "$$topics.startTime",
+                  new Date("2020-10-31T00:00:00.000Z")
+                ]
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    $group: {
+      _id: "$_id",
+      topics: {
+        $push: "$codekata.name"
+      },
+      tasks: {
+        $push: "$class.task.name"
+      }
+    }
+  },
+  {
+    $group: {
+      _id: {
+        tasks: "$tasks",
+        topics: "$topics"
+      },
+      
+    }
+  }
+])
+
+Find all the company drives which appeared between 15 oct-2020 and 31-oct-2020
+db.collection.aggregate([
+  {
+    "$project": {
+      drives: {
+        $filter: {
+          "input": "$company_drives",
+          "as": "drives",
+          "cond": {
+            $and: [
+              {
+                $gte: [
+                  "$$drives.startTime",
+                  new Date("2020-10-15T00:00:00.000Z")
+                ]
+              },
+              {
+                $lte: [
+                  "$$drives.startTime",
+                  new Date("2020-10-31T00:00:00.000Z")
+                ]
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    $group: {
+      _id: "$drives.name"
+    }
+  }
+])
+
+Find all the company drives and students who are appeared for the placement.
+
+db.collection.aggregate([
+  {
+    "$project": {
+      "user.firstname": 1,
+      "company_drives": {
+        $filter: {
+          input: "$company_drives",
+          as: "drives",
+          cond: {
+            $eq: [
+              "$$drives.attended",
+              true
+            ]
+          }
+        }
+      },
+      
+    },
+    
+  },
+  {
+    $group: {
+      _id: "$company_drives.name",
+      attendedBy: {
+        $push: "$user.firstname"
+      }
+    }
+  }
+])
+
+Find the number of problems solved by the user in codekata
+db.collection.aggregate([
+  {
+    "$project": {
+      "user.firstname": 1,
+      "codekata": {
+        "topics": {
+          "questions_solved": 1
+        }
+      },
+      
+    }
+  },
+  {
+    $group: {
+      "_id": {
+        firstname: "$user.firstname",
+        solved: {
+          $sum: "$codekata.topics.questions_solved"
+        }
+      }
+    }
+  },
+  
+])
+Find all the mentors with who has the mentee's count more than 15
+db.collection.aggregate([
+  {
+    $group: {
+      "_id": {
+        name: "$mentor.name",
+        
+      },
+      mentees: {
+        $push: "$user.firstname"
+      }
+    }
+  },
+  {
+    $group: {
+      _id: "$_id",
+      count: {
+        $sum: {
+          $size: "$mentees"
+        }
+      }
+    }
+  },
+  {
+    $match: {
+      "count": {
+        $gt: 15
+      }
+    }
+  }
+])
+
+Find the number of users who are absent and task is not submitted  between 15 oct-2020 and 31-oct-2020
 db.collection.aggregate([
   {
     "$project": {
