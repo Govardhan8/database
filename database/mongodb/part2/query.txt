@@ -1,0 +1,56 @@
+db.collection.aggregate([
+  {
+    "$project": {
+      "user.firstname": 1,
+      class: {
+        $filter: {
+          "input": "$class",
+          "as": "class",
+          "cond": {
+            $and: [
+              {
+                $gte: [
+                  "$$class.startTime",
+                  new Date("2020-10-15T00:00:00.000Z")
+                ]
+              },
+              {
+                $lte: [
+                  "$$class.startTime",
+                  new Date("2020-10-31T00:00:00.000Z")
+                ]
+              },
+              {
+                $eq: [
+                  "$$class.task.submitted",
+                  false
+                ]
+              },
+              {
+                $eq: [
+                  "$$class.attendance",
+                  false
+                ]
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    $match: {
+      "class.attendance": false
+    }
+  },
+  {
+    $group: {
+      _id: "defaulters",
+      count: {
+        $sum: {
+          $size: "$class"
+        }
+      }
+    }
+  }
+])
