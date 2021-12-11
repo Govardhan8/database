@@ -1,0 +1,574 @@
+[
+  {
+    "_id": {
+      "$oid": "61a60c04404cace84a54b767"
+    },
+    "user": {
+      "firstname": "govardhan",
+      "lastname": "n",
+      "qualification": "BE"
+    },
+    "codekata": {
+      "topics": [
+        {
+          "name": "basic",
+          "questions_available": 100,
+          "questions_solved": 50,
+          "startTime": {
+            "$date": "2020-10-08T02:00:00.000Z"
+          }
+        },
+        {
+          "name": "array",
+          "questions_available": 100,
+          "questions_solved": 50,
+          "startTime": {
+            "$date": "2020-10-09T02:00:00.000Z"
+          }
+        },
+        {
+          "name": "dsa",
+          "questions_available": 100,
+          "questions_solved": 50,
+          "startTime": {
+            "$date": "2020-11-08T02:00:00.000Z"
+          }
+        }
+      ]
+    },
+    "mentor": {
+      "name": "ragav"
+    },
+    "class": [
+      {
+        "day": 1,
+        "startTime": {
+          "$date": "2020-10-08T02:00:00.000Z"
+        },
+        "attendance": false,
+        "task": {
+          "name": "html",
+          "submission_url": "https",
+          "submitted": false
+        }
+      },
+      {
+        "day": 2,
+        "startTime": {
+          "$date": "2020-10-09T02:00:00.000Z"
+        },
+        "attendance": true,
+        "task": {
+          "name": "css",
+          "submission_url": "https",
+          "submitted": false
+        }
+      },
+      {
+        "day": 3,
+        "startTime": {
+          "$date": "2020-10-15T02:00:00.000Z"
+        },
+        "attendance": true,
+        "task": {
+          "name": "html",
+          "submission_url": "https",
+          "submitted": true
+        }
+      },
+      {
+        "day": 4,
+        "startTime": {
+          "$date": "2020-10-16T02:00:00.000Z"
+        },
+        "attendance": true,
+        "task": {
+          "name": "css",
+          "submission_url": "https",
+          "submitted": false
+        }
+      }
+    ],
+    "company_drives": [
+      {
+        "startTime": {
+          "$date": "2020-10-15T02:00:00.000Z"
+        },
+        "name": "infotech",
+        "attended": true
+      },
+      {
+        "startTime": {
+          "$date": "2020-10-09T02:00:00.000Z"
+        },
+        "name": "edureka",
+        "attended": false
+      },
+      {
+        "startTime": {
+          "$date": "2020-10-18T02:00:00.000Z"
+        },
+        "name": "youtube",
+        "attended": true
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "61a60c04404cace84a54b768"
+    },
+    "user": {
+      "firstname": "manu",
+      "lastname": "n",
+      "qualification": "BE"
+    },
+    "codekata": {
+      "topics": [
+        {
+          "name": "basic",
+          "questions_available": 100,
+          "questions_solved": 50,
+          "startTime": {
+            "$date": "2020-10-08T02:00:00.000Z"
+          }
+        },
+        {
+          "name": "array",
+          "questions_available": 100,
+          "questions_solved": 50,
+          "startTime": {
+            "$date": "2020-10-09T02:00:00.000Z"
+          }
+        },
+        {
+          "name": "dsa",
+          "questions_available": 100,
+          "questions_solved": 75,
+          "startTime": {
+            "$date": "2020-11-08T02:00:00.000Z"
+          }
+        },
+        
+      ]
+    },
+    "mentor": {
+      "name": "suman"
+    },
+    "class": [
+      {
+        "day": 1,
+        "startTime": {
+          "$date": "2020-10-08T02:00:00.000Z"
+        },
+        "attendance": false,
+        "task": {
+          "name": "html",
+          "submission_url": "https",
+          "submitted": false
+        }
+      },
+      {
+        "day": 2,
+        "startTime": {
+          "$date": "2020-10-09T02:00:00.000Z"
+        },
+        "attendance": false,
+        "task": {
+          "name": "css",
+          "submission_url": "https",
+          "submitted": false
+        }
+      },
+      {
+        "day": 3,
+        "startTime": {
+          "$date": "2020-10-15T02:00:00.000Z"
+        },
+        "attendance": true,
+        "task": {
+          "name": "html",
+          "submission_url": "https",
+          "submitted": true
+        }
+      },
+      {
+        "day": 4,
+        "startTime": {
+          "$date": "2020-10-16T02:00:00.000Z"
+        },
+        "attendance": false,
+        "task": {
+          "name": "css",
+          "submission_url": "https",
+          "submitted": false
+        }
+      }
+    ],
+    "company_drives": [
+      {
+        "startTime": {
+          "$date": "2020-10-15T02:00:00.000Z"
+        },
+        "name": "infotech",
+        "attended": true
+      },
+      {
+        "startTime": {
+          "$date": "2020-10-09T02:00:00.000Z"
+        },
+        "name": "edureka",
+        "attended": false
+      },
+      {
+        "startTime": {
+          "$date": "2020-10-18T02:00:00.000Z"
+        },
+        "name": "youtube",
+        "attended": true
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "61a60c04404cace84a54b769"
+    },
+    "user": {
+      "firstname": "ap",
+      "lastname": "n",
+      "qualification": "BE"
+    },
+    "codekata": {
+      "topics": [
+        {
+          "name": "basic",
+          "questions_available": 100,
+          "questions_solved": 50,
+          "startTime": {
+            "$date": "2020-10-08T02:00:00.000Z"
+          }
+        },
+        {
+          "name": "array",
+          "questions_available": 100,
+          "questions_solved": 50,
+          "startTime": {
+            "$date": "2020-10-09T02:00:00.000Z"
+          }
+        },
+        {
+          "name": "dsa",
+          "questions_available": 100,
+          "questions_solved": 50,
+          "startTime": {
+            "$date": "2020-11-08T02:00:00.000Z"
+          }
+        }
+      ]
+    },
+    "mentor": {
+      "name": "ragav"
+    },
+    "class": [
+      {
+        "day": 1,
+        "startTime": {
+          "$date": "2020-10-08T02:00:00.000Z"
+        },
+        "attendance": true,
+        "task": {
+          "name": "html",
+          "submission_url": "https",
+          "submitted": true
+        }
+      },
+      {
+        "day": 2,
+        "startTime": {
+          "$date": "2020-10-09T02:00:00.000Z"
+        },
+        "attendance": true,
+        "task": {
+          "name": "css",
+          "submission_url": "https",
+          "submitted": true
+        }
+      },
+      {
+        "day": 3,
+        "startTime": {
+          "$date": "2020-10-15T02:00:00.000Z"
+        },
+        "attendance": true,
+        "task": {
+          "name": "html",
+          "submission_url": "https",
+          "submitted": true
+        }
+      },
+      {
+        "day": 4,
+        "startTime": {
+          "$date": "2020-10-16T02:00:00.000Z"
+        },
+        "attendance": true,
+        "task": {
+          "name": "css",
+          "submission_url": "https",
+          "submitted": true
+        }
+      }
+    ],
+    "company_drives": [
+      {
+        "startTime": {
+          "$date": "2020-10-15T02:00:00.000Z"
+        },
+        "name": "infotech",
+        "attended": true
+      },
+      {
+        "startTime": {
+          "$date": "2020-10-09T02:00:00.000Z"
+        },
+        "name": "edureka",
+        "attended": false
+      },
+      {
+        "startTime": {
+          "$date": "2020-10-18T02:00:00.000Z"
+        },
+        "name": "youtube",
+        "attended": true
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "61a60c04404cace84a54b770"
+    },
+    "user": {
+      "firstname": "asha",
+      "lastname": "n",
+      "qualification": "BE"
+    },
+    "codekata": {
+      "topics": [
+        {
+          "name": "basic",
+          "questions_available": 100,
+          "questions_solved": 50,
+          "startTime": {
+            "$date": "2020-10-08T02:00:00.000Z"
+          }
+        },
+        {
+          "name": "array",
+          "questions_available": 100,
+          "questions_solved": 50,
+          "startTime": {
+            "$date": "2020-10-09T02:00:00.000Z"
+          }
+        },
+        {
+          "name": "dsa",
+          "questions_available": 100,
+          "questions_solved": 50,
+          "startTime": {
+            "$date": "2020-11-08T02:00:00.000Z"
+          }
+        }
+      ]
+    },
+    "mentor": {
+      "name": "ragav"
+    },
+    "class": [
+      {
+        "day": 1,
+        "startTime": {
+          "$date": "2020-10-08T02:00:00.000Z"
+        },
+        "attendance": true,
+        "task": {
+          "name": "html",
+          "submission_url": "https",
+          "submitted": true
+        }
+      },
+      {
+        "day": 2,
+        "startTime": {
+          "$date": "2020-10-09T02:00:00.000Z"
+        },
+        "attendance": true,
+        "task": {
+          "name": "css",
+          "submission_url": "https",
+          "submitted": true
+        }
+      },
+      {
+        "day": 3,
+        "startTime": {
+          "$date": "2020-10-15T02:00:00.000Z"
+        },
+        "attendance": true,
+        "task": {
+          "name": "html",
+          "submission_url": "https",
+          "submitted": true
+        }
+      },
+      {
+        "day": 4,
+        "startTime": {
+          "$date": "2020-10-16T02:00:00.000Z"
+        },
+        "attendance": true,
+        "task": {
+          "name": "css",
+          "submission_url": "https",
+          "submitted": true
+        }
+      }
+    ],
+    "company_drives": [
+      {
+        "startTime": {
+          "$date": "2020-10-15T02:00:00.000Z"
+        },
+        "name": "infotech",
+        "attended": false
+      },
+      {
+        "startTime": {
+          "$date": "2020-10-09T02:00:00.000Z"
+        },
+        "name": "edureka",
+        "attended": false
+      },
+      {
+        "startTime": {
+          "$date": "2020-10-18T02:00:00.000Z"
+        },
+        "name": "youtube",
+        "attended": true
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "61a60c04404cace84a54b771"
+    },
+    "user": {
+      "firstname": "gova",
+      "lastname": "n",
+      "qualification": "BE"
+    },
+    "codekata": {
+      "topics": [
+        {
+          "name": "basic",
+          "questions_available": 100,
+          "questions_solved": 50,
+          "startTime": {
+            "$date": "2020-10-08T02:00:00.000Z"
+          }
+        },
+        {
+          "name": "array",
+          "questions_available": 100,
+          "questions_solved": 50,
+          "startTime": {
+            "$date": "2020-10-09T02:00:00.000Z"
+          }
+        },
+        {
+          "name": "dsa",
+          "questions_available": 100,
+          "questions_solved": 50,
+          "startTime": {
+            "$date": "2020-11-08T02:00:00.000Z"
+          }
+        }
+      ]
+    },
+    "mentor": {
+      "name": "ragav"
+    },
+    "class": [
+      {
+        "day": 1,
+        "startTime": {
+          "$date": "2020-10-08T02:00:00.000Z"
+        },
+        "attendance": true,
+        "task": {
+          "name": "html",
+          "submission_url": "https",
+          "submitted": true
+        }
+      },
+      {
+        "day": 2,
+        "startTime": {
+          "$date": "2020-10-09T02:00:00.000Z"
+        },
+        "attendance": true,
+        "task": {
+          "name": "css",
+          "submission_url": "https",
+          "submitted": true
+        }
+      },
+      {
+        "day": 3,
+        "startTime": {
+          "$date": "2020-10-15T02:00:00.000Z"
+        },
+        "attendance": true,
+        "task": {
+          "name": "html",
+          "submission_url": "https",
+          "submitted": true
+        }
+      },
+      {
+        "day": 4,
+        "startTime": {
+          "$date": "2020-10-16T02:00:00.000Z"
+        },
+        "attendance": false,
+        "task": {
+          "name": "css",
+          "submission_url": "https",
+          "submitted": false
+        }
+      }
+    ],
+    "company_drives": [
+      {
+        "startTime": {
+          "$date": "2020-10-15T02:00:00.000Z"
+        },
+        "name": "infotech",
+        "attended": true
+      },
+      {
+        "startTime": {
+          "$date": "2020-10-09T02:00:00.000Z"
+        },
+        "name": "edureka",
+        "attended": false
+      },
+      {
+        "startTime": {
+          "$date": "2020-10-18T02:00:00.000Z"
+        },
+        "name": "youtube",
+        "attended": false
+      }
+    ]
+  },
+  
+]
